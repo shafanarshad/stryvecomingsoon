@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STRYVE™ | Stronger Every Day</title>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@700&display=swap" rel="stylesheet">
+<style>
+  body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: #0c0c0c;
+    color: white;
+    font-family: 'Figtree', sans-serif;
+    overflow: hidden;
+  }
+  .background-fog {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: radial-gradient(circle at center, rgba(56,189,248,0.1) 0%, rgba(12,12,12,1) 70%);
+    animation: fogMove 20s ease-in-out infinite alternate;
+    z-index: -1;
+  }
+  @keyframes fogMove {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+  }
+  .border-text, .border-text-bottom, .border-text-vertical-left, .border-text-vertical-right {
+    position: absolute;
+    white-space: nowrap;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    color: #38BDF8;
+  }
+  .border-text {
+    top: 0;
+    width: 100%;
+    text-align: center;
+    animation: ticker-h 20s linear infinite;
+  }
+  .border-text-bottom {
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    animation: ticker-h-reverse 20s linear infinite;
+  }
+  .border-text-vertical-left {
+    left: 0;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    height: 100%;
+    text-align: center;
+    animation: ticker-v 20s linear infinite;
+  }
+  .border-text-vertical-right {
+    right: 0;
+    writing-mode: vertical-rl;
+    height: 100%;
+    text-align: center;
+    animation: ticker-v-reverse 20s linear infinite;
+  }
+  @keyframes ticker-h {
+    from { transform: translateX(100%); }
+    to { transform: translateX(-100%); }
+  }
+  @keyframes ticker-h-reverse {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(100%); }
+  }
+  @keyframes ticker-v {
+    from { transform: translateY(100%); }
+    to { transform: translateY(-100%); }
+  }
+  @keyframes ticker-v-reverse {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(100%); }
+  }
+  .hero {
+    position: absolute;
+    top: 40%;
+    width: 100%;
+    text-align: center;
+    font-size: 2.2rem;
+    padding: 0 20px;
+    text-transform: uppercase;
+  }
+  #painpoint {
+    color: #38BDF8;
+    transition: opacity 0.5s ease-in-out;
+  }
+  .cta-section {
+    position: absolute;
+    bottom: 5%;
+    width: 100%;
+    text-align: center;
+  }
+  form input[type="email"] {
+    padding: 0.8rem;
+    width: 250px;
+    border-radius: 10px;
+    border: none;
+    margin-right: 1rem;
+  }
+  form button {
+    background: #38BDF8;
+    border: none;
+    color: #0c0c0c;
+    padding: 0.8rem 2rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 30px;
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+<div class="background-fog"></div>
+<div class="border-text">STRYVE™ — STRONGER EVERY DAY</div>
+<div class="border-text-bottom">STRYVE™ — STRONGER EVERY DAY</div>
+<div class="border-text-vertical-left">STRYVE™ — STRONGER EVERY DAY</div>
+<div class="border-text-vertical-right">STRYVE™ — STRONGER EVERY DAY</div>
+
+<div class="hero">
+  ARE YOU TIRED OF <span id="painpoint"></span>
+</div>
+
+<div class="cta-section">
+  <p>Start your journey. Stronger every day begins here.</p>
+  <form action="https://formspree.io/f/your-form-id" method="POST">
+    <input type="email" name="email" placeholder="Enter your email" required>
+    <button type="submit">No Gimmicks. No Fakes. Just STRYVE™.</button>
+  </form>
+</div>
+
+<script>
+const painPoints = [
+  "Paying absurd amounts for imported proteins?",
+  "Getting tricked with fake or repacked powders?",
+  "Trusting brands that hide their lab results?",
+  "No halal certifications or clean labels in sight?",
+  "Spending big, still guessing what you’re really getting?",
+  "Stuck with boring flavors at premium prices?",
+  "Feeling bloated after poor-quality proteins?",
+  "Overhyped imported brands delivering disappointment?",
+  "Hidden sugars sabotaging your progress?"
+];
+let index = 0;
+const painpoint = document.getElementById('painpoint');
+function rotatePainPoints() {
+  painpoint.style.opacity = 0;
+  setTimeout(() => {
+    painpoint.textContent = painPoints[index];
+    painpoint.style.opacity = 1;
+    index = (index + 1) % painPoints.length;
+  }, 400);
+}
+setInterval(rotatePainPoints, 3000);
+rotatePainPoints();
+</script>
+
+</body>
+</html>
