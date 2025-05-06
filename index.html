@@ -186,12 +186,38 @@
   ARE YOU TIRED OF <span id="painpoint"></span>
 </div>
 
-<div class="cta-section">
+<!-- <div class="cta-section">
   <p>Start your journey. Stronger every day begins here.</p>
   <form action="https://formspree.io/f/mvgaabrg" method="POST">
   <input type="email" name="email" placeholder="Enter your email" required>
   <button type="submit">No Gimmicks. No Fakes. Just STRYVE™.</button>
 </form>
+</div> -->
+
+  <div class="cta-section">
+  <p>Start your journey. Stronger every day begins here.</p>
+  <form id="stryveForm">
+    <input type="email" name="email" placeholder="Enter your email" required>
+    <button type="submit">No Gimmicks. No Fakes. Just STRYVE™.</button>
+  </form>
+</div>
+
+<!-- Popup Notification -->
+<div id="popup" style="
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #38BDF8;
+  color: #0c0c0c;
+  padding: 1rem 2rem;
+  border-radius: 20px;
+  font-weight: bold;
+  display: none;
+  z-index: 10;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+">
+  Email received. You’ll hear from us soon!
 </div>
 
 <script>
