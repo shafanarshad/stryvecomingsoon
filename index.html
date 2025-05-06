@@ -145,6 +145,8 @@
     }
 
     form input[type="email"] {
+      color: white;
+      background-color: #181a1b;
       padding: 0.8rem;
       width: 90%;
       max-width: 300px;
@@ -153,15 +155,22 @@
     }
 
     form button {
-      background: #38BDF8;
-      border: none;
-      color: #0c0c0c;
-      padding: 0.8rem 2rem;
-      font-size: 1rem;
-      cursor: pointer;
-      border-radius: 30px;
-      font-weight: bold;
-    }
+  background: #38BDF8;
+  border: none;
+  color: #0c0c0c;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 30px;
+  font-weight: bold;
+}
+
+form button:hover {
+  background: linear-gradient(180deg, #38BDF8, #005dff);
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.4);          /* soft glow */
+  transition: background 0.4s ease, box-shadow 0.3s ease;
+}
+
 
     @media (min-width: 600px) {
       .hero {
